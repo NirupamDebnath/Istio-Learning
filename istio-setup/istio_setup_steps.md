@@ -60,3 +60,8 @@ to add the addons (kiali, graphana, premetheus, jaeger etc) go to
 - cd ~/opt/istio-1.14.3/samples/addons
 - kubectl apply -f .
 - kubectl port-forward svc/kiali 20001:20001 -n istio-system
+
+to enable istio-proxy on a namespace.
+
+- kubectl get ns default --show-labels
+- kubectl label namespace default istio-injection=enabled
