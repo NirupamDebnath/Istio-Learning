@@ -65,3 +65,14 @@ to enable istio-proxy on a namespace.
 
 - kubectl get ns default --show-labels
 - kubectl label namespace default istio-injection=enabled
+
+deploy sample booksapp
+
+- cd ~/opt/istio-1.14.3/samples/bookinfo/platform/kube
+- kubectl apply -f bookinfo.yaml
+- cd ~/opt/istio-1.14.3/samples/bookinfo/networking
+- k apply -f bookinfo-gateway.yaml
+
+Run following command to expose loadbalancer
+
+- minikube tunnel
